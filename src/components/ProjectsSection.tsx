@@ -1,65 +1,80 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Mobile App",
-    description: "A full-featured shopping app built with React Native and Expo. Features product browsing, cart management, secure checkout, and push notifications.",
-    tech: ["React Native", "Expo", "TypeScript", "Redux", "NativeWind"],
+    title: "E-Commerce Website",
+    description: "A full-featured shopping website built with React. Features product browsing, cart management, secure checkout, and admin dashboard.",
+    tech: ["React", "TypeScript", "shadcn/ui", "TailwindCSS"],
+    link: "https://nilecart.vercel.app/",
+    github: "https://github.com/amirphiladam2/nilecart-mvp-marketplace"
   },
-  {
-    title: "Project Management Dashboard",
-    description: "A real-time collaborative dashboard for managing tasks and teams. Built with React and Supabase for instant syncing across users.",
-    tech: ["React", "TypeScript", "Supabase", "Redux"],
-  },
-  {
-    title: "Social Media Platform",
-    description: "A mobile-first social platform with real-time messaging, media sharing, and user authentication powered by Supabase.",
+    {
+    title: "Caloriee-Diet Planner App",
+    description: "A mobile-first diet planner app with real-time tracking, meal planning, and user authentication powered by Supabase.",
     tech: ["React Native", "Expo", "Supabase", "NativeWind"],
+    link: "#",
+    github: "https://github.com/amirphiladam2/CalorieeApp"
   },
+ 
   {
-    title: "Fitness Tracking App",
-    description: "Cross-platform fitness app with workout logging, progress charts, and personalized plans. Designed in Figma, built with Expo.",
-    tech: ["React Native", "Expo", "TypeScript", "Figma", "Redux"],
+    title: "Task Tracker App",
+    description: "Cross-platform task tracking app with task logging, progress tracking, and reminders. Built with Expo.",
+    tech: ["React Native", "Expo", "JavaScript"],
+    link: "#",
+    github: "https://github.com/amirphiladam2/Actionable"
   },
-  {
-    title: "SaaS Admin Panel",
-    description: "A comprehensive admin interface with analytics, user management, and role-based access control for a multi-tenant SaaS platform.",
-    tech: ["React", "TypeScript", "Supabase", "Redux"],
-  },
-  {
-    title: "Recipe Discovery App",
-    description: "A beautifully designed recipe app with search, favorites, and meal planning. Built with a focus on smooth animations and UX.",
-    tech: ["React Native", "Expo", "NativeWind", "TypeScript"],
+ {
+    title: "Budget Tracker App",
+    description: "A real-time dashboard for managing budgets and expenses. Built with React Native and Supabase for instant syncing across users.",
+    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Redux"],
+    link: "https://amirp.netlify.app/myapps",
+    github: "#"
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-28 px-6">
-      <div className="max-w-5xl mx-auto">
-        <p className="font-mono text-sm text-primary tracking-widest mb-3">PORTFOLIO</p>
-        <h2 className="text-3xl sm:text-4xl font-bold mb-14">Featured Projects</h2>
-        
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <section id="projects" className="py-32 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16 space-y-4">
+          <p className="font-mono text-sm text-primary tracking-widest uppercase opacity-80">Portfolio</p>
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Featured Projects</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A selection of my recent work, featuring mobile and web applications.
+          </p>
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <div
               key={project.title}
-              className="group flex flex-col p-6 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300"
+              className="group flex flex-col p-8 rounded-2xl glass-card hover:border-primary/30 trans-all hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5"
             >
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors leading-tight">
-                  {project.title}
-                </h3>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-0.5 ml-2" />
+              <div className="flex items-start justify-between mb-4">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 hover:text-primary transition-colors"><Github className="w-5 h-5" /></a>
+                </div>
               </div>
-              
-              <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
+
+              <h3 className="font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                <a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}</a>
+              </h3>
+
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
                 {project.description}
               </p>
-              
-              <div className="flex flex-wrap gap-2">
+
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                 {project.tech.map((t) => (
-                  <span key={t} className="text-xs font-mono px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground">
+                  <span key={t} className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-secondary/50 text-secondary-foreground border border-white/5">
                     {t}
                   </span>
                 ))}

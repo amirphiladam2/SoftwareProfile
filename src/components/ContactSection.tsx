@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Youtube } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -14,11 +14,14 @@ const ContactSection = () => {
           <a href="mailto:amir@example.com" className="p-3 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300 group">
             <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
           </a>
-          <a href="#" className="p-3 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300 group">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300 group">
             <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
           </a>
-          <a href="#" className="p-3 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300 group">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300 group">
             <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl border border-border bg-card hover:border-glow hover:glow transition-all duration-300 group">
+            <Youtube className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
           </a>
         </div>
       </div>

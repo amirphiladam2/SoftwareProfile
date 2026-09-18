@@ -1,42 +1,30 @@
-import { Github, Linkedin, Mail, Twitter, Youtube } from "lucide-react";
+import { CircleCheck, Github, Linkedin, Mail, MapPin, Twitter, Youtube } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-32 px-6 border-t border-white/5 bg-gradient-to-b from-background to-black">
-      <div className="max-w-3xl mx-auto text-center">
-        <p className="font-mono text-sm text-primary tracking-widest uppercase opacity-80 mb-3">GET IN TOUCH</p>
-        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-8">Let's Work Together</h2>
-        <p className="text-muted-foreground mb-12 max-w-lg mx-auto leading-relaxed">
-          I'm currently available for freelance work and open to full-time opportunities. If you have a project that needs some creative direction, I'd love to hear about it.
-        </p>
-
-        <div className="flex gap-6 justify-center mb-20">
-          <a href="mailto:amirphiladam@gmail.com" className="p-4 rounded-full border border-white/10 glass hover:bg-white/10 hover:scale-110 trans-all group">
-            <Mail className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="sr-only">Email</span>
-          </a>
-          <a href="https://github.com/amirphiladam2" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full border border-white/10 glass hover:bg-white/10 hover:scale-110 trans-all group">
-            <Github className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="sr-only">GitHub</span>
-          </a>
-          <a href="https://linkedin.com/in/amirphiladam" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full border border-white/10 glass hover:bg-white/10 hover:scale-110 trans-all group">
-            <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="sr-only">LinkedIn</span>
-          </a>
-          <a href="https://x.com/amirphiladam" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full border border-white/10 glass hover:bg-white/10 hover:scale-110 trans-all group">
-            <Twitter className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="sr-only">Twitter</span>
-          </a>
-          <a href="https://youtube.com/@amirdevstudio-1" target="_blank" rel="noopener noreferrer" className="p-4 rounded-full border border-white/10 glass hover:bg-white/10 hover:scale-110 trans-all group">
-            <Youtube className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
-            <span className="sr-only">YouTube</span>
-          </a>
+    <section id="contact" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-6 max-w-2xl">
+          <p className="mb-2 text-sm font-semibold text-primary">Get in touch</p>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Let&apos;s work together</h2>
+          <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Have an idea, a product to build, or an opportunity to discuss? Send me a message and I&apos;ll get back to you.</p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <a href="mailto:amirphiladam@gmail.com" className="flex min-h-20 items-center gap-4 rounded-xl border border-white/[0.1] bg-card/60 p-4 transition-colors hover:border-primary/40"><Mail className="h-5 w-5 shrink-0 text-primary" /><span><span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Email</span><span className="mt-1 block break-all text-sm">amirphiladam@gmail.com</span></span></a>
+          <div className="flex min-h-20 items-center gap-4 rounded-xl border transition-colors hover:border-primary/40 border-white/[0.1] bg-card/60 p-4"><CircleCheck className="h-5 w-5 shrink-0 text-emerald-400" /><span><span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Availability</span><span className="mt-1 block text-sm">Open to opportunities</span></span></div>
+          <div className="flex min-h-20 items-center gap-4 rounded-xl border transition-colors hover:border-primary/40 border-white/[0.1] bg-card/60 p-4"><MapPin className="h-5 w-5 shrink-0 text-primary" /><span><span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Location</span><span className="mt-1 block text-sm">South Sudan</span></span></div>
+        </div>
+        <div className="mt-8 flex gap-4 text-muted-foreground">
+          <a href="https://github.com/amirphiladam2" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transition-colors hover:text-primary"><Github className="h-5 w-5" /></a>
+          <a href="https://linkedin.com/in/amirphiladam" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-primary"><Linkedin className="h-5 w-5" /></a>
+          <a href="https://x.com/amirphiladam" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="transition-colors hover:text-primary"><Twitter className="h-5 w-5" /></a>
+          <a href="https://youtube.com/@amirdevstudio-1" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="transition-colors hover:text-primary"><Youtube className="h-5 w-5" /></a>
         </div>
       </div>
 
-      <div className="pt-10 border-t border-white/5 text-center flex flex-col md:flex-row justify-between items-center max-w-5xl mx-auto text-xs text-muted-foreground">
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-5 text-center text-sm text-muted-foreground sm:flex-row">
         <p className="font-mono">
-          © 2026 Amir. Built with React & TypeScript.
+          © 2026 Amir P. Adam
         </p>
       </div>
     </section>

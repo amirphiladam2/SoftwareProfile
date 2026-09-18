@@ -1,85 +1,119 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github, ImageIcon } from "lucide-react";
+import { siExpo, siJavascript, siReact, siRedux, siShadcnui, siSupabase, siTailwindcss, siTypescript } from "simple-icons/icons";
+import type { SimpleIcon } from "simple-icons";
+
+const techIcons: Record<string, SimpleIcon> = {
+  React: siReact,
+  "React Native": siReact,
+  Expo: siExpo,
+  TypeScript: siTypescript,
+  Supabase: siSupabase,
+  NativeWind: siTailwindcss,
+  TailwindCSS: siTailwindcss,
+  "shadcn/ui": siShadcnui,
+  JavaScript: siJavascript,
+  Redux: siRedux,
+};
+
+const TechIcon = ({ name }: { name: string }) => {
+  const icon = techIcons[name];
+
+  if (!icon) return null;
+
+  return (
+    <svg role="img" aria-label={name} viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" style={{ color: `#${icon.hex}` }}>
+      <path d={icon.path} />
+    </svg>
+  );
+};
 
 const projects = [
   {
     title: "E-Commerce Website",
     description: "A full-featured shopping website built with React. Features product browsing, cart management, secure checkout, and admin dashboard.",
+    thumbnail: "/images/nilecart.png",
     tech: ["React", "TypeScript", "shadcn/ui", "TailwindCSS"],
     link: "https://nilecart.vercel.app/",
     github: "https://github.com/amirphiladam2/nilecart-mvp-marketplace"
   },
-    {
+  {
     title: "Caloriee-Diet Planner App",
     description: "A mobile-first diet planner app with real-time tracking, meal planning, and user authentication powered by Supabase.",
     tech: ["React Native", "Expo", "Supabase", "NativeWind"],
-    link: "#",
+    link: "https://play.google.com/store/apps/details?id=com.caloriee.com&hl=en",
     github: "https://github.com/amirphiladam2/CalorieeApp"
-  },
- 
-  {
-    title: "Task Tracker App",
-    description: "Cross-platform task tracking app with task logging, progress tracking, and reminders. Built with Expo.",
-    tech: ["React Native", "Expo", "JavaScript"],
-    link: "#",
-    github: "https://github.com/amirphiladam2/Actionable"
-  },
- {
-    title: "Budget Tracker App",
-    description: "A real-time dashboard for managing budgets and expenses. Built with React Native and Supabase for instant syncing across users.",
-    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Redux"],
-    link: "https://amirp.netlify.app/myapps",
-    github: "#"
+    , thumbnail: "/images/Feature Graphics.png"
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <p className="font-mono text-sm text-primary tracking-widest uppercase opacity-80">Portfolio</p>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A selection of my recent work, featuring mobile and web applications.
-          </p>
+    <section id="projects" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="mb-2 text-base font-semibold text-primary">Selected work</p>
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Things I&apos;ve built</h2>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A selection of applications focused on useful, clear user experiences.</p>
+          </div>
+          <a href="#contact" className="hidden items-center gap-2 text-sm font-semibold text-primary hover:text-foreground sm:flex">Have a project? <ArrowUpRight className="h-3.5 w-3.5" /></a>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <div
+        <div className="grid gap-5 sm:grid-cols-2">
+          {projects.map((project) => (
+            <article
               key={project.title}
-              className="group flex flex-col p-8 rounded-2xl glass-card hover:border-primary/30 trans-all hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5"
+              className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.1] bg-card/60 transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
             >
-              <div className="flex items-start justify-between mb-4">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                </a>
-                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 hover:text-primary transition-colors"><Github className="w-5 h-5" /></a>
+              <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-secondary">
+                {project.thumbnail ? (
+                  <img src={project.thumbnail} alt={`${project.title} preview`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                ) : (
+                  <div className="flex h-full flex-col items-center justify-center gap-3 text-muted-foreground">
+                    <ImageIcon className="h-7 w-7 opacity-50" />
+                    <span className="font-mono text-sm">Project preview</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex flex-1 flex-col p-5">
+                <div className="mb-3 flex items-start justify-between gap-4">
+                  <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}</a>
+                  </h3>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${project.title}`}
+                    className="shrink-0 rounded-full border border-white/10 p-2 text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
+
+                <p className="mb-4 flex-1 text-sm leading-6 text-muted-foreground">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 border-t border-white/10 pt-4">
+                  {project.tech.map((t) => (
+                    <span key={t} className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.03] px-2 py-1.5 text-xs font-mono font-medium text-secondary-foreground">
+                      <TechIcon name={t} />
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-5 flex items-center gap-3 text-sm font-semibold">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:text-foreground transition-colors">
+                    View project <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
+                    <Github className="h-3.5 w-3.5" /> Source
+                  </a>
                 </div>
               </div>
-
-              <h3 className="font-bold text-xl text-foreground mb-3 group-hover:text-primary transition-colors">
-                <a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}</a>
-              </h3>
-
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-                {project.tech.map((t) => (
-                  <span key={t} className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-secondary/50 text-secondary-foreground border border-white/5">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

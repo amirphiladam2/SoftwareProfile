@@ -1,65 +1,90 @@
-import { siReact, siExpo, siTypescript, siSupabase, siTailwindcss, siRedux, siFigma, siNodedotjs, siPostgresql, siGit, siDocker } from "simple-icons/icons";
+import { siReact, siExpo, siTypescript, siSupabase, siTailwindcss, siRedux, siFigma, siPostgresql, siGit, siNestjs, siFirebase, siNextdotjs, siGithub, siPrisma, siVsco, siDocker, siPostman } from "simple-icons/icons";
 import type { SimpleIcon } from "simple-icons";
+import { VscVscode } from "react-icons/vsc";
+import type { IconType } from "react-icons";
+
+type BrandIcon = SimpleIcon | IconType;
+
+const isSimpleIcon = (icon: BrandIcon): icon is SimpleIcon => typeof icon !== "function";
 
 // Helper component to render simple-icons
-const Icon = ({ icon, className }: { icon: SimpleIcon; className?: string }) => (
-  <svg
-    role="img"
-    viewBox="0 0 24 24"
-    className={className}
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <title>{icon.title}</title>
-    <path d={icon.path} />
-  </svg>
-);
+const Icon = ({ icon, className, label }: { icon: BrandIcon; className?: string; label: string }) => {
+  if (!isSimpleIcon(icon)) {
+    const Component = icon;
+    return <Component aria-label={label} className={className} color="#007ACC" />;
+  }
 
-const techs: { name: string; description: string; icon: SimpleIcon }[] = [
-  { name: "React", description: "UI Library", icon: siReact },
-  { name: "React Native", description: "Mobile Development", icon: siReact },
-  { name: "Expo", description: "Mobile Toolchain", icon: siExpo },
-  { name: "TypeScript", description: "Type Safety", icon: siTypescript },
-  { name: "Supabase", description: "Backend & Auth", icon: siSupabase },
-  { name: "NativeWind", description: "Mobile Styling", icon: siTailwindcss },
-  { name: "Redux", description: "State Management", icon: siRedux },
-  { name: "Figma", description: "Design & Prototyping", icon: siFigma },
-  { name: "PostgreSQL", description: "Database", icon: siPostgresql },
-  { name: "Git", description: "Version Control", icon: siGit },
+  return (
+    <svg role="img" aria-label={label} viewBox="0 0 24 24" className={className} fill="currentColor" style={{ color: `#${icon.hex}` }} xmlns="http://www.w3.org/2000/svg">
+      <title>{icon.title}</title>
+      <path d={icon.path} />
+    </svg>
+  );
+};
+
+const techGroups = [
+  {
+    title: "Frontend & Mobile",
+    description: "Building focused interfaces for web and native products.",
+    techs: [
+      { name: "React", icon: siReact },
+      { name: "Next.js", icon: siNextdotjs },
+      { name: "React Native", icon: siReact },
+      { name: "Expo", icon: siExpo },
+      { name: "TypeScript", icon: siTypescript },
+      { name: "Tailwind CSS", icon: siTailwindcss },
+    ],
+  },
+  {
+    title: "Backend & Databases",
+    description: "Reliable data and state management.",
+    techs: [
+      { name: "Supabase", icon: siSupabase },
+      { name: "NestJS", icon: siNestjs },
+      { name: "PostgreSQL", icon: siPostgresql },
+      { name: "Firebase", icon: siFirebase },
+      { name: "Prisma", icon: siPrisma }
+    ],
+  },
+  {
+    title: "Tools",
+    description: "Reliable data and state management.",
+    techs: [
+      { name: "Git", icon: siGit },
+      { name: "GitHub", icon: siGithub },
+      { name: "VS Code", icon: VscVscode },
+      { name: "Docker", icon: siDocker },
+      { name: "Postman", icon: siPostman }
+    ],
+  },
 ];
 
 const TechStack = () => {
   return (
-    <section id="stack" className="py-32 px-6 relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <p className="font-mono text-sm text-primary tracking-widest uppercase opacity-80">Technologies</p>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">Tech Stack</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            The tools and technologies I use to build scalable, high-performance applications.
-          </p>
+    <section id="skills" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <p className="mb-2 text-base font-semibold text-primary">Technical arsenal</p>
+            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Tools I use to build</h2>
+            <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A practical toolkit for building reliable web and mobile products.</p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {techs.map((tech, i) => (
-            <div
-              key={tech.name + i}
-              className="group relative p-6 rounded-2xl glass-card hover:border-primary/30 trans-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 cursor-default overflow-hidden"
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="relative z-10 flex flex-col items-center text-center space-y-3">
-                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <Icon icon={tech.icon} className="w-6 h-6" />
-                </div>
-
-                <div>
-                  <h3 className="font-bold text-foreground">
-                    {tech.name}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1 font-medium">{tech.description}</p>
-                </div>
+        <div className="grid gap-4 lg:grid-cols-3">
+          {techGroups.map((group) => (
+            <div key={group.title} className="flex h-full flex-col rounded-xl border border-white/[0.1] bg-card/40 p-5">
+              <h3 className="text-lg font-bold text-foreground">{group.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{group.description}</p>
+              <div className="mt-4 grid flex-1 grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
+                {group.techs.map((tech) => (
+                  <div key={tech.name} className="group flex items-center gap-2 rounded-md border border-white/[0.08] bg-background/40 px-3 py-2.5 transition-colors hover:border-primary/40">
+                    <div className="rounded-md bg-white/5 p-1.5 transition-colors group-hover:bg-white/10">
+                      <Icon icon={tech.icon} label={tech.name} className="h-4 w-4" />
+                    </div>
+                    <h4 className="text-sm font-semibold text-foreground">{tech.name}</h4>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

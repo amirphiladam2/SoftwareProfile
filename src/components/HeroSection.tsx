@@ -19,8 +19,8 @@ const HeroSection = () => {
           <span className="text-gradient inline-block hover:scale-[1.02] transition-transform duration-500">Amir</span>
         </h1>
 
-        <p className="text-lg sm:text-2xl text-muted-foreground/80 max-w-2xl mx-auto animate-fade-in opacity-0 leading-relaxed font-light" style={{ animationDelay: '0.4s' }}>
-          Crafting exceptional digital experiences. I build performant, beautiful applications with a focus on clean architecture and interaction design.
+        <p className="text-lg sm:text-2xl text-muted-foreground/80 max-w-2xl mx-auto animate-fade-in opacity-0 leading-relaxed font-light tracking-tight" style={{ animationDelay: '0.4s' }}>
+          I am a passionate software developer who build fast, scalable, and user-friendly web and mobile applications.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>

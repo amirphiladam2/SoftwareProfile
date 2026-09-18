@@ -50,13 +50,12 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <div>
-            <p className="mb-2 text-base font-semibold text-primary">Selected work</p>
-            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Things I&apos;ve built</h2>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A selection of applications focused on useful, clear user experiences.</p>
+        <div className="mb-6 flex justify-center text-center">
+          <div className="mx-auto">
+            <p className="mb-2 text-base font-semibold text-primary uppercase">Selected work</p>
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Featured <span className="text-primary">Projects</span></h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A selection of applications focused on useful, clear user experiences.</p>
           </div>
-          <a href="#contact" className="hidden items-center gap-2 text-sm font-semibold text-primary hover:text-foreground sm:flex">Have a project? <ArrowUpRight className="h-3.5 w-3.5" /></a>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">

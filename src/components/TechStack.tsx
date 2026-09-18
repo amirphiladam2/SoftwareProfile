@@ -63,11 +63,11 @@ const TechStack = () => {
   return (
     <section id="skills" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-6 flex items-end justify-between gap-4">
-          <div>
-            <p className="mb-2 text-base font-semibold text-primary">Technical arsenal</p>
-            <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Tools I use to build</h2>
-            <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A practical toolkit for building reliable web and mobile products.</p>
+        <div className="mb-6 flex justify-center text-center">
+          <div className="mx-auto">
+            <p className="mb-2 text-base font-semibold text-primary uppercase">Technical arsenal</p>
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Tools I use to build</h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A practical toolkit for building reliable web and mobile products.</p>
           </div>
         </div>
 

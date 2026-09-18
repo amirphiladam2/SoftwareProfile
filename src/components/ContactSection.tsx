@@ -4,10 +4,10 @@ const ContactSection = () => {
   return (
     <section id="contact" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-6 max-w-2xl">
-          <p className="mb-2 text-sm font-semibold text-primary">Get in touch</p>
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Let&apos;s work together</h2>
-          <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Have an idea, a product to build, or an opportunity to discuss? Send me a message and I&apos;ll get back to you.</p>
+        <div className="mx-auto mb-6 max-w-2xl text-center">
+          <p className="mb-2 text-sm font-semibold text-primary uppercase">Get in touch</p>
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Let&apos;s work together</h2>
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Have an idea, a product to build, or an opportunity to discuss? Send me a message and I&apos;ll get back to you.</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           <a href="mailto:amirphiladam@gmail.com" className="flex min-h-20 items-center gap-4 rounded-xl border border-white/[0.1] bg-card/60 p-4 transition-colors hover:border-primary/40"><Mail className="h-5 w-5 shrink-0 text-primary" /><span><span className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Email</span><span className="mt-1 block break-all text-sm">amirphiladam@gmail.com</span></span></a>

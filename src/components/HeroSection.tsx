@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download, Youtube } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -25,16 +25,21 @@ const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
           <a
-            href="#projects"
-            className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all hover:shadow-[0_0_20px_-5px_hsl(252_59%_48%)] hover:-translate-y-1"
+            href="https://youtube.com/@amirdevstudios"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-red-600 text-white font-medium transition-all hover:-translate-y-1 hover:bg-red-700 hover:shadow-[0_0_20px_-5px_rgba(220,38,38,0.8)]"
           >
-            View Projects
+            <Youtube className="h-5 w-5" />
+            YouTube Channel
           </a>
           <a
-            href="#contact"
-            className="px-8 py-4 rounded-full border border-white/10 glass hover:bg-white/5 text-foreground font-medium transition-all hover:-translate-y-1"
+            href="/amir-phil-adam-cv.pdf"
+            download="Amir-Phil-Adam-CV.pdf"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium transition-all hover:-translate-y-1 hover:bg-primary/90 hover:shadow-[0_0_20px_-5px_hsl(252_59%_48%)]"
           >
-            Get in Touch
+            <Download className="h-5 w-5" />
+            Download CV
           </a>
         </div>
       </div>

@@ -61,7 +61,7 @@ const techGroups = [
 
 const TechStack = () => {
   return (
-    <section id="skills" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
+    <section id="skills" className="border-t border-border px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 flex justify-center text-center">
           <div className="mx-auto">
@@ -73,13 +73,13 @@ const TechStack = () => {
 
         <div className="grid gap-4 lg:grid-cols-3">
           {techGroups.map((group) => (
-            <div key={group.title} className="flex h-full flex-col rounded-xl border border-white/[0.1] bg-card/40 p-5">
+            <div key={group.title} className="flex h-full flex-col rounded-xl border border-border bg-card/40 p-5">
               <h3 className="text-lg font-bold text-foreground">{group.title}</h3>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">{group.description}</p>
               <div className="mt-4 grid flex-1 grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-1">
                 {group.techs.map((tech) => (
-                  <div key={tech.name} className="group flex items-center gap-2 rounded-md border border-white/[0.08] bg-background/40 px-3 py-2.5 transition-colors hover:border-primary/40">
-                    <div className="rounded-md bg-white/5 p-1.5 transition-colors group-hover:bg-white/10">
+                  <div key={tech.name} className="group flex items-center gap-2 rounded-md border border-border bg-background/40 px-3 py-2.5 transition-colors hover:border-primary/40">
+                    <div className="rounded-md bg-secondary p-1.5 transition-colors group-hover:bg-muted">
                       <Icon icon={tech.icon} label={tech.name} className="h-4 w-4" />
                     </div>
                     <h4 className="text-sm font-semibold text-foreground">{tech.name}</h4>

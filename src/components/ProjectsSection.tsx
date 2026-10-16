@@ -48,7 +48,7 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="border-t border-white/[0.06] px-6 py-10 sm:py-12">
+    <section id="projects" className="border-t border-border px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 flex justify-center text-center">
           <div className="mx-auto">
@@ -62,9 +62,9 @@ const ProjectsSection = () => {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.1] bg-card/60 transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
+              className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card/60 transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
             >
-              <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-secondary">
+              <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-secondary">
                 {project.thumbnail ? (
                   <img src={project.thumbnail} alt={`${project.title} preview`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 ) : (
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Open ${project.title}`}
-                    className="shrink-0 rounded-full border border-white/10 p-2 text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+                    className="shrink-0 rounded-full border border-border p-2 text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
                   >
                     <ArrowUpRight className="h-4 w-4" />
                   </a>
@@ -95,9 +95,9 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-1.5 border-t border-white/10 pt-4">
+                <div className="flex flex-wrap gap-1.5 border-t border-border pt-4">
                   {project.tech.map((t) => (
-                    <span key={t} className="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.03] px-2 py-1.5 text-xs font-mono font-medium text-secondary-foreground">
+                    <span key={t} className="inline-flex items-center gap-1.5 rounded-md border border-border bg-secondary px-2 py-1.5 text-xs font-mono font-medium text-secondary-foreground">
                       <TechIcon name={t} />
                       {t}
                     </span>

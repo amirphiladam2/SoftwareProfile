@@ -1,5 +1,5 @@
 import { ArrowUpRight, ExternalLink, Github, ImageIcon } from "lucide-react";
-import { siExpo, siJavascript, siReact, siRedux, siShadcnui, siSupabase, siTailwindcss, siTypescript } from "simple-icons/icons";
+import { siExpo, siJavascript, siNestjs, siReact, siRedux, siShadcnui, siSupabase, siTailwindcss, siTypescript } from "simple-icons/icons";
 import type { SimpleIcon } from "simple-icons";
 
 const techIcons: Record<string, SimpleIcon> = {
@@ -10,6 +10,7 @@ const techIcons: Record<string, SimpleIcon> = {
   Supabase: siSupabase,
   NativeWind: siTailwindcss,
   TailwindCSS: siTailwindcss,
+  NestJs:siNestjs,
   "shadcn/ui": siShadcnui,
   JavaScript: siJavascript,
   Redux: siRedux,
@@ -43,6 +44,14 @@ const projects = [
     link: "https://play.google.com/store/apps/details?id=com.caloriee.com&hl=en",
     github: "https://github.com/amirphiladam2/CalorieeApp"
     , thumbnail: "/images/Feature Graphics.png"
+  },
+  {
+    title: "SWEPack",
+    description: "SWEPack is a community-built library of software engineering resources. Browse and search curated tools, libraries, documentation, guides, courses, repositories, and communities; save useful finds into personal collections; and submit new resources for review.",
+    tech: ["NextJs", "NestJs", "PostgreSQL", "TailwindCSS"],
+    link: "https://swepack.vercel.app",
+    github: "https://github.com/amirphiladam2/SWEPack"
+    , thumbnail: "/images/swepackv.png"
   },
 ];
 

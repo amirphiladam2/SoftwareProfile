@@ -1,5 +1,5 @@
 import { ArrowUpRight, ExternalLink, Github, ImageIcon } from "lucide-react";
-import { siExpo, siJavascript, siNestjs, siReact, siRedux, siShadcnui, siSupabase, siTailwindcss, siTypescript } from "simple-icons/icons";
+import { siExpo, siJavascript, siNestjs, siNextdotjs, siReact, siRedux, siShadcnui, siSupabase, siTailwindcss, siTypescript } from "simple-icons/icons";
 import type { SimpleIcon } from "simple-icons";
 
 const techIcons: Record<string, SimpleIcon> = {
@@ -11,6 +11,7 @@ const techIcons: Record<string, SimpleIcon> = {
   NativeWind: siTailwindcss,
   TailwindCSS: siTailwindcss,
   NestJs:siNestjs,
+  NextJs:siNextdotjs,
   "shadcn/ui": siShadcnui,
   JavaScript: siJavascript,
   Redux: siRedux,

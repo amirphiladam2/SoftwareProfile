@@ -31,12 +31,12 @@ const TechIcon = ({ name }: { name: string }) => {
 
 const projects = [
   {
-    title: "E-Commerce Website",
-    description: "A full-featured shopping website built with React. Features product browsing, cart management, secure checkout, and admin dashboard.",
-    thumbnail: "/images/nilecart.png",
-    tech: ["React", "TypeScript", "shadcn/ui", "TailwindCSS"],
-    link: "https://nilecart.vercel.app/",
-    github: "https://github.com/amirphiladam2/nilecart-mvp-marketplace"
+    title: "SWEPack",
+    description: "SWEPack is a community-built library of software engineering resources. Browse and search curated tools, libraries, documentation, guides, courses, repositories, and communities; save useful finds into personal collections; and submit new resources for review.",
+    tech: ["NextJs", "NestJs", "PostgreSQL", "TailwindCSS"],
+    link: "https://swepack.vercel.app",
+    github: "https://github.com/amirphiladam2/SWEPack"
+    , thumbnail: "/images/swepreview.png"
   },
   {
     title: "Caloriee-Diet Planner App",
@@ -47,12 +47,12 @@ const projects = [
     , thumbnail: "/images/Feature Graphics.png"
   },
   {
-    title: "SWEPack",
-    description: "SWEPack is a community-built library of software engineering resources. Browse and search curated tools, libraries, documentation, guides, courses, repositories, and communities; save useful finds into personal collections; and submit new resources for review.",
-    tech: ["NextJs", "NestJs", "PostgreSQL", "TailwindCSS"],
-    link: "https://swepack.vercel.app",
-    github: "https://github.com/amirphiladam2/SWEPack"
-    , thumbnail: "/images/swepackv.png"
+    title: "E-Commerce Website",
+    description: "A full-featured shopping website built with React. Features product browsing, cart management, secure checkout, and admin dashboard.",
+    thumbnail: "/images/nilecart.png",
+    tech: ["React", "TypeScript", "shadcn/ui", "TailwindCSS"],
+    link: "https://nilecart.vercel.app/",
+    github: "https://github.com/amirphiladam2/nilecart-mvp-marketplace"
   },
 ];
 

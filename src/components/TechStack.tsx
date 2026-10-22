@@ -61,7 +61,7 @@ const techGroups = [
 
 const TechStack = () => {
   return (
-    <section id="skills" className="border-t border-border px-6 py-10 sm:py-12">
+    <section id="skills" className="scroll-mt-24 border-t border-border px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 flex justify-center text-center">
           <div className="mx-auto">

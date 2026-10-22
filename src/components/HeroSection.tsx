@@ -46,7 +46,7 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-fade-in opacity-0" style={{ animationDelay: '1.2s' }}>
-        <a href="#stack" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer group">
+        <a href="#skills" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer group">
           <span className="text-xs tracking-widest uppercase opacity-70 group-hover:opacity-100 transition-opacity">Scroll</span>
           <ArrowDown className="w-4 h-4 animate-bounce" />
         </a>

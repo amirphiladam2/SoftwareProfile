@@ -13,7 +13,7 @@ const Navbar = () => {
   }, [isLightMode]);
 
   return (
-    <header className="sticky z-50 top-0 mt-4 px-4">
+    <header className="sticky z-50 top-0 mt-4 px-4 animate-nav-in">
       <Container>
         <nav className="p-4 border rounded-3xl bg-background/90 shadow/90 backdrop-blur-xl">
           <div className="flex items-center gap-6 px-6 py-3">
@@ -66,7 +66,7 @@ const Navbar = () => {
           </div>
 
           {isMenuOpen && (
-            <div className="border-t border-border bg-background/95 px-6 py-3 sm:hidden">
+            <div className="animate-menu-in border-t border-border bg-background/95 px-6 py-3 sm:hidden">
               <div className="flex flex-col">
                 {links.map((item) => (
                   <a

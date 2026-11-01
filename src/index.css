@@ -69,6 +69,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-heading);
@@ -89,6 +93,19 @@
     background-image: linear-gradient(hsl(257 100% 69% / 0.055) 1px, transparent 1px), linear-gradient(90deg, hsl(257 100% 69% / 0.055) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: linear-gradient(to bottom, black, transparent 85%);
+    animation: grid-pan 18s linear infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .text-gradient {
@@ -124,5 +141,26 @@
   /* Smooth transitions */
   .trans-all {
     @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-grid,
+  .animate-blob-drift,
+  .animate-float,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-grid-pan {
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

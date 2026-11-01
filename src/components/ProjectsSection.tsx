@@ -1,4 +1,5 @@
 import { ArrowUpRight, ExternalLink, Github, ImageIcon } from "lucide-react";
+import Reveal from "./Reveal";
 import { siExpo, siJavascript, siNestjs, siNextdotjs, siReact, siRedux, siShadcnui, siSupabase, siTailwindcss, siTypescript } from "simple-icons/icons";
 import type { SimpleIcon } from "simple-icons";
 
@@ -60,19 +61,19 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="border-t border-border px-6 py-10 sm:py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-6 flex justify-center text-center">
+        <Reveal className="mb-6 flex justify-center text-center">
           <div className="mx-auto">
             <p className="mb-2 text-base font-semibold text-primary uppercase">Selected work</p>
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Featured <span className="text-primary">Projects</span></h2>
             <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-muted-foreground">A selection of applications focused on useful, clear user experiences.</p>
           </div>
-        </div>
+        </Reveal>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
+            <Reveal key={project.title} delay={index * 140} className="h-full">
             <article
-              key={project.title}
-              className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card/60 transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-card"
+              className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card/60 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:bg-card hover:shadow-[0_18px_50px_-28px_hsl(257_100%_69%_/_0.5)]"
             >
               <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-secondary">
                 {project.thumbnail ? (
@@ -123,6 +124,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </div>

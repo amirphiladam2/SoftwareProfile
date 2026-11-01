@@ -4,8 +4,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden pt-20">
       {/* Ambient glow - Animated */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse pointer-events-none mix-blend-screen" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px] animate-pulse pointer-events-none mix-blend-screen" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-blob-drift pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px] animate-blob-drift pointer-events-none mix-blend-screen" style={{ animationDelay: '4s', animationDirection: 'reverse' }} />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
         <div className="inline-block animate-fade-in opacity-0" style={{ animationDelay: '0.1s' }}>
